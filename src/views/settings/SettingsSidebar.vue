@@ -2,12 +2,32 @@
   <div class="settings-sidebar">
     <v-list class="pa-4" color="transparent">
       <template v-for="(item, i) in settingsMenu" :key="i">
-        <v-btn :to="item.to" size="large" rounded="lg" class="mb-4 pr-4 custom-btn" block exact>
+        <v-btn
+          no-uppercase
+          :to="item.to"
+          size="small"
+          rounded="lg"
+          class="mb-4 pr-4 custom-btn no-uppercase"
+          block
+          exact
+        >
           <v-icon left>{{ item.icon }}</v-icon>
           <span class="menu-item ml-4" v-text="item.title"></span>
         </v-btn>
       </template>
     </v-list>
+
+    <div class="avatar">
+      <div class="image">
+        <v-avatar size="48px">
+          <img src="@/assets/images/users/user2.jpg" alt="Julia" />
+        </v-avatar>
+      </div>
+      <div class="details">
+        <h2>Sofia Rivers</h2>
+        <p>Sofia@devias</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -27,9 +47,16 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.avatar {
+  margin-left: 10px;
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
 .menu-item {
   font-size: 24px;
   color: #000000; /* Default text color for inactive state */
+  text-transform: none;
 }
 
 .custom-btn {

@@ -12,6 +12,7 @@
                 label="USD Amount"
                 type="number"
                 required
+                variant="outlined"
               ></v-text-field>
             </v-col>
             <v-col cols="12" md="6">
@@ -21,6 +22,7 @@
                 :items="coinOptions"
                 label="Select Coin"
                 required
+                variant="outlined"
               ></v-select>
             </v-col>
           </v-row>

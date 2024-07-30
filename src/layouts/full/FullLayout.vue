@@ -64,10 +64,30 @@ export default defineComponent({
       </v-container>
     </v-main>
   </v-app>
+
+  <v-icon class="settings-icon">fa-solid fa-cog</v-icon>
 </template>
 
 <style scoped>
 .side-bar {
   background-color: #121621;
+}
+
+.settings-icon {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  font-size: 36px;
+  color: #121621;
+  animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 </style>

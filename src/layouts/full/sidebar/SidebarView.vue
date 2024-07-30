@@ -36,12 +36,12 @@ export default defineComponent({
           <!-- ---------------------------------------------- -->
 
           <v-btn
-            color="#5542f8"
             size="large"
             rounded="lg"
             :to="item.to"
-            class="mb-4 pr-4 custom-btn"
+            class="mb-4 pr-4 custom-btn no-uppercase"
             block
+            no-uppercase
           >
             <!-- <v-icon class="feather-sm">{{ item.icon }}</v-icon> -->
             <v-icon left>{{ item.icon }}</v-icon>
@@ -64,10 +64,12 @@ export default defineComponent({
 </template>
 
 <style scoped>
-
-.memu-item {
+.menu-item {
   font-size: 36px;
+  text-transform: none;
+  color: #1e1e1e; /* Text color for both active and inactive */
 }
+
 .custom-btn {
   text-align: left; /* Aligns text to the left */
   justify-content: flex-start; /* Aligns all contents to the left */
@@ -75,7 +77,9 @@ export default defineComponent({
 
 .custom-btn .v-icon {
   margin-right: 8px; /* Adjusts spacing between icon and text */
+  color: #1e1e1e; /* Icon color for both active and inactive */
 }
+
 .custom-btn .menu-item {
   font-family:
     'Inter',
@@ -89,8 +93,20 @@ export default defineComponent({
     'Segoe UI Emoji';
   font-style: normal;
   font-weight: 500;
-  color: rgb(255, 255, 255);
   font-size: 14px;
   line-height: 28px;
+}
+
+/* Style for the active button */
+.v-btn.router-link-active {
+  color: #1e1e1e !important; /* Text color for active state */
+}
+
+.v-btn.router-link-active .menu-item {
+  color: #1e1e1e !important; /* Text color for active state */
+}
+
+.v-btn.router-link-active .v-icon {
+  color: #1e1e1e !important; /* Icon color for active state */
 }
 </style>

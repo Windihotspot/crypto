@@ -36,6 +36,7 @@ const router = createRouter({
         {
           path: '/settings',
           name: 'settings',
+          redirect: '/settings/account',
           component: SettingsView,
           children: [
             {
@@ -44,19 +45,14 @@ const router = createRouter({
               component: () => import('@/views/settings/AccountView.vue')
             },
             {
-              path: 'profile',
-              name: 'profile',
-              component: () => import('@/views/settings/ProfileView.vue')
+              path: 'notifications',
+              name: 'notifications',
+              component: () => import('@/views/settings/NotificationsView.vue')
             },
             {
-              path: 'support',
-              name: 'support',
-              component: () => import('@/views/settings/SupportView.vue')
-            },
-            {
-              path: 'compliance',
-              name: 'compliance',
-              component: () => import('@/views/settings/ComplianceView.vue')
+              path: 'security',
+              name: 'security',
+              component: () => import('@/views/settings/SecurityView.vue')
             }
           ]
         }
@@ -64,8 +60,6 @@ const router = createRouter({
     }
   ]
 })
-
-export default router
 
 //Route guard for each route
 router.beforeEach((to, from, next) => {
@@ -80,3 +74,5 @@ router.beforeEach((to, from, next) => {
   }
   next()
 })
+
+export default router
